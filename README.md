@@ -25,6 +25,26 @@ The **Ultimate Secure Authentication System** is a robust, production-grade solu
 *   **Detailed Audit Logging**: Automatically records all critical actions, including login attempts and significant system events, providing an invaluable resource for security monitoring and compliance.
 *   **Containerized Deployment**: Fully encapsulated within Docker containers, facilitating consistent, isolated, and scalable deployment across various environments using `docker-compose`.
 
+## 📸 Project Showcase (Live from Termux)
+
+Below are actual screenshots of the system running in a **Termux** environment, demonstrating the successful implementation of the database, authentication flow, and API documentation.
+
+| 🖥️ Server Startup & Logs | 🔐 JWT Authentication |
+|:---:|:---:|
+| ![Termux Logs](./screenshots/ultimatepr4.jpg) | ![Authorize Flow](./screenshots/ultimatepr3.jpg) |
+| *Database tables creation & 200 OK responses* | *Secure OAuth2 Password Bearer implementation* |
+
+| 🛡️ Swagger UI Dashboard | 👥 User Management |
+|:---:|:---:|
+| ![Swagger Docs](./screenshots/ultimatepr2.jpg) | ![User List](./screenshots/ultimatepr5.jpg) |
+| *Interactive API documentation (CDN Optimized)* | *Successful retrieval of registered users* |
+
+| 🔑 Access Token Generation | 🏠 Root Endpoint |
+|:---:|:---:|
+| ![Login Success](./screenshots/ultimatepr1.jpg) | ![API Welcome](./screenshots/ultimatepr6.jpg) |
+| *JWT Access & Refresh tokens issuance* | *Welcome message from the core API* |
+
+
 ## 🛠 Tech Stack
 
 *   **Backend Framework**: FastAPI (Python 3.11+)
@@ -69,6 +89,13 @@ To deploy and run this secure authentication system on your Termux or Linux envi
     ```
     The `-d` flag runs the containers in detached mode.
 
+### Run Directly on Termux (Non-Docker)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+PYTHONPATH=. python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
 ### Accessing the API Documentation
 
 Once the system is operational, you can access the interactive API documentation through your web browser:
